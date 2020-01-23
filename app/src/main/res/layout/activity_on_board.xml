@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.onboard.OnBoardActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/big_height"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintTop_toBottomOf="@id/next"
+        app:tabBackground="@drawable/bg_amber_dot"
+        app:tabGravity="center"
+        app:tabIndicator="@drawable/bg_tab_indicator"
+        app:tabIndicatorColor="@android:color/holo_blue_dark"
+        app:tabIndicatorGravity="center"
+        app:tabMaxWidth="@dimen/tabMaxWidth" />
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:text="@string/next"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:textStyle="bold"
+        android:textSize="@dimen/textSize"
+        app:layout_constraintTop_toBottomOf="@id/viewpager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/small_margin"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_primary"
+    tools:context=".ui.main.MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/text_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_left"
+            android:layout_marginTop="@dimen/small_margin"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/text_month_and_year"
+            android:layout_width="@dimen/data_wight"
+            android:layout_height="@dimen/data_height"
+            android:layout_marginTop="@dimen/small_margin"
+
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:entries="@array/countries"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main" />
+
+
+    <ImageView
+        android:id="@+id/image_sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:background="@drawable/rectangle2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+    <LinearLayout
+        android:id="@+id/ly_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_sun">
+
+
+        <TextView
+            android:id="@+id/text_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:gravity="top"
+            android:text="@string/now"
+            android:textSize="@dimen/textSize" />
+
+        <TextView
+            android:id="@+id/text_now_gradus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/big_margin"
+            android:textSize="@dimen/textSize" />
+
+        <TextView
+            android:id="@+id/text_little_cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/ly_1"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_forecast" />
+
+    <LinearLayout
+        android:id="@+id/ly_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/very_big_margin"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@id/ly_1"
+        app:layout_constraintTop_toBottomOf="@id/image_sun">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/text_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:gravity="top"
+                android:padding="@dimen/small_margin"
+                android:text="@string/today"
+                android:textSize="@dimen/textSize"
+                tools:ignore="MissingConstraints" />
+
+
+            <TextView
+                android:id="@+id/text_max_gradus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:textSize="@dimen/textSize"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_today" />
+
+            <TextView
+                android:id="@+id/text_max"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:text="@string/max"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_max_gradus" />
+
+            <TextView
+                android:id="@+id/text_min_gradus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:textSize="@dimen/textSize"
+                app:layout_constraintLeft_toRightOf="@id/text_max_gradus"
+                app:layout_constraintTop_toBottomOf="@id/text_today" />
+
+            <TextView
+                android:id="@+id/text_min"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/big_margin"
+                android:layout_marginLeft="@dimen/small_margin"
+                android:gravity="center_vertical"
+                android:text="@string/min"
+                app:layout_constraintLeft_toRightOf="@id/text_max"
+                app:layout_constraintTop_toBottomOf="@id/text_min_gradus" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:text="@string/wind"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <TextView
+        android:id="@+id/text_wind_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_wind" />
+
+    <TextView
+        android:id="@+id/text_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:text="@string/humidity"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_wind_value" />
+
+    <TextView
+        android:id="@+id/text_humidity_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_humidity" />
+
+    <TextView
+        android:id="@+id/text_sunrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:text="@string/sunrice"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_humidity_value" />
+
+    <TextView
+        android:id="@+id/text_sunrice_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_sunrice" />
+
+    <TextView
+        android:id="@+id/text_pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_marginLeft="16dp"
+        android:padding="@dimen/small_margin"
+        android:text="@string/pressure"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ly_2"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+    <TextView
+        android:id="@+id/text_pressure_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/text_pressure"
+        app:layout_constraintTop_toBottomOf="@id/text_pressure" />
+
+    <TextView
+        android:id="@+id/text_cloudiness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_marginLeft="16dp"
+        android:padding="@dimen/small_margin"
+        android:text="@string/cloudiness"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ly_2"
+        app:layout_constraintTop_toBottomOf="@id/text_pressure_value" />
+
+    <TextView
+        android:id="@+id/text_cloudiness_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/text_cloudiness"
+        app:layout_constraintTop_toBottomOf="@id/text_cloudiness" />
+
+    <TextView
+        android:id="@+id/text_sunset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:layout_marginLeft="16dp"
+        android:padding="@dimen/small_margin"
+        android:text="@string/sunset"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/ly_2"
+        app:layout_constraintTop_toBottomOf="@id/text_cloudiness_value" />
+
+    <TextView
+        android:id="@+id/text_sunset_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        android:padding="@dimen/small_margin"
+        android:textSize="@dimen/big_margin"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/text_pressure"
+        app:layout_constraintTop_toBottomOf="@id/text_sunset" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/big_margin"
+        android:background="@drawable/bg_button"
+        android:src="@drawable/ic_start"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_start" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/big_margin"
+        android:visibility="gone"
+        android:onClick="onClick"
+        android:background="@drawable/bg_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_stop" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

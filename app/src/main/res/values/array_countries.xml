@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countries">
+        <item>Bishkek</item>
+        <item>Berlin</item>
+        <item>Moscow</item>
+        <item>Dushanbe</item>
+        <item>Ankara</item>
+        <item>Nur-sultan</item>
+        <item>London</item>
+        <item>Beijing</item>
+        <item>Seoul</item>
+        <item>Dubai</item>
+        <item>Rome</item>
+        <item>Athens</item>
+    </string-array>
+</resources>

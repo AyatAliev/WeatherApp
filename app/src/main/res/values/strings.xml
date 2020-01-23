@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="hello">Hello World!</string>
+    <string name="skip" translatable="false">skip</string>
+    <string name="next" translatable="false">next</string>
+    <string name="start" translatable="false">start</string>
+    <string name="now" translatable="false">Now</string>
+    <string name="little_cloud" translatable="false">Little cloud</string>
+    <string name="today" translatable="false">Today</string>
+    <string name="max" translatable="false">Max</string>
+    <string name="min" translatable="false">Min</string>
+    <string name="wind" translatable="false">Wind</string>
+    <string name="value" translatable="false">Value</string>
+    <string name="humidity" translatable="false">Humidity</string>
+    <string name="sunrice" translatable="false">Sunrice</string>
+    <string name="pressure" translatable="false">Pressure</string>
+    <string name="cloudiness" translatable="false">Cloudiness</string>
+    <string name="sunset" translatable="false">Sunset</string>
+    <string name="update" translatable="false">Update</string>
+
+
+    <string name="celcium" translatable="false">%s Celsius</string>
+    <string name="map">map</string>
+    <plurals name="toys">
+        <item quantity="one">%s toy</item>
+        <item quantity="other">%d toys</item>
+    </plurals>
+</resources>
