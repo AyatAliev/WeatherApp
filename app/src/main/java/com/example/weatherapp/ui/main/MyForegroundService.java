@@ -40,18 +40,15 @@ public class MyForegroundService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         startForeground(1, NotificationHelper.createNotification(getApplicationContext()
                 ,"locations","body"));
-        if (intent.getBooleanExtra("true",false) == true){
+        if (intent.getBooleanExtra(IS_SERVICE_ACTIVE,false) == true){
             requestLocationUpdates();
+        }
+        else
+        {
+            stopSelf();
         }
 
         return START_STICKY;
-
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        stopSelf();
 
     }
 
@@ -80,6 +77,13 @@ public class MyForegroundService extends Service {
                 }
             }, getMainLooper());
         }
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        stopSelf();
 
     }
 }
